@@ -38,6 +38,11 @@ function promptUserInput()
         },
         {
             type: "input",
+            message: "How would a user test this project?",
+            name: "tests"
+        },
+        {
+            type: "input",
             message: "What is this project's github url?",
             name: "githubURL"
         },
@@ -62,6 +67,7 @@ Table of Contents
 * [Usage](#Usage)
 * [License](#License)
 * [Contributers](#Contributers)
+* [Testing](#Testing)
 * [GitHub](#Github)
         
 ## Installation
@@ -75,13 +81,16 @@ This project is using the following license(s): ${response.license}
         
 ## Contributers
 There are ${response.contributers} people working on this project.
+
+## Testing
+${response.tests}
         
 ## GitHub
 [Click here to visit this project's github page](${response.githubURL})
 
-![Build Status](/appveyor/build/${response.username}/${response.repo})`);
+![Build Status](https://img.shields.io/appveyor/build/${response.username}/${response.repo})`);
 
-        fs.writeFile(`test2.md`, data, function (err) {
+        fs.writeFile(`README.md`, data, function (err) {
             if (err) 
             return console.log(err);
           });
